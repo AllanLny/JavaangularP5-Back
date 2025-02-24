@@ -81,6 +81,16 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.5.1.Final</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -122,6 +132,11 @@
                         <configuration>
                             <dataFile>${project.build.directory}/jacoco-output/jacoco-unit-tests.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco-unit-test-coverage-report</outputDirectory>
+                            <excludes>
+                                <exclude>**/com/openclassrooms/starterjwt/dto/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/payload/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/models/**</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
 
@@ -146,6 +161,11 @@
                         <configuration>
                             <dataFile>${project.build.directory}/jacoco-output/jacoco-integration-tests.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco-integration-test-coverage-report</outputDirectory>
+                            <excludes>
+                                <exclude>**/com/openclassrooms/starterjwt/dto/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/payload/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/models/**</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
 
@@ -177,6 +197,11 @@
                         <configuration>
                             <dataFile>${project.build.directory}/jacoco-output/merged.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco-merged-test-coverage-report</outputDirectory>
+                            <excludes>
+                                <exclude>**/com/openclassrooms/starterjwt/dto/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/payload/**</exclude>
+                                <exclude>**/com/openclassrooms/starterjwt/models/**</exclude>
+                            </excludes>
                         </configuration>
                     </execution>
 
@@ -192,8 +217,9 @@
                                 <rule>
                                     <element>CLASS</element>
                                     <excludes>
-                                        <exclude>*Test</exclude>
-                                        <exclude>*IT</exclude>
+                                        <exclude>com.openclassrooms.starterjwt.dto/**</exclude>
+                                        <exclude>com.openclassrooms.starterjwt.models/**</exclude>
+                                        <exclude>com.openclassrooms.starterjwt.payload/**</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>
