@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.openclassrooms.starterjwt.models.Teacher;
 import com.openclassrooms.starterjwt.payload.request.LoginRequest;
 import com.openclassrooms.starterjwt.payload.request.SignupRequest;
+import com.openclassrooms.starterjwt.repository.SessionRepository;
 import com.openclassrooms.starterjwt.repository.TeacherRepository;
 import com.openclassrooms.starterjwt.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,14 +36,17 @@ public class TeacherControllerIT {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private SessionRepository sessionRepository;
+
     private String jwtToken;
 
     @BeforeEach
     void setUp() throws Exception {
+        sessionRepository.deleteAll();
         teacherRepository.deleteAll();
         userRepository.deleteAll();
 
-        // Register a user
         SignupRequest signupRequest = new SignupRequest();
         signupRequest.setEmail("test@test.com");
         signupRequest.setPassword("password123");
@@ -54,7 +58,6 @@ public class TeacherControllerIT {
                         .content(objectMapper.writeValueAsString(signupRequest)))
                 .andExpect(status().isOk());
 
-        // Login to get JWT token
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setEmail("test@test.com");
         loginRequest.setPassword("password123");
