@@ -1,14 +1,85 @@
-# Yoga App !
+# Yoga App
+
+## Description
+
+Yoga App is a full-stack application designed to help users manage and participate in yoga sessions. The application provides functionalities for user management, session management, and participation tracking.
+
+## Features
+
+- User registration and authentication
+- Create, update, and delete yoga sessions
+- Participate in and withdraw from sessions
+- View all available sessions
+
+## Installation
+
+To install and run the project locally, follow these steps:
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/AllanLny/JavaangularP5-Back
+    cd YogaApp
+    ```
+
+2. **Navigate to the backend directory:**
+    ```sh
+    cd back
+    ```
+
+3. **Build the project using Maven:**
+    ```sh
+    mvn clean install
+    ```
+
+4. **Run the Spring Boot application:**
+    ```sh
+    mvn spring-boot:run
+    ```
+
+5. **Navigate to the frontend directory:**
+    ```sh
+    cd ../front
+    ```
+
+6. **Install the frontend dependencies:**
+    ```sh
+    npm install
+    ```
+
+7. **Run the frontend application:**
+    ```sh
+    npm start
+    ```
+
+## Running Tests
+
+### Unit Tests
+
+To run the unit tests, use the following command:
+```sh
+mvn test
+ ```
+
+### Integration Tests
+
+To run the integration tests, use the following command:
+
+```sh
+mvn verify
+```
 
 
-For launch and generate the jacoco code coverage:
-> mvn clean test
+### Code Coverage
+to generate the code coverage report, use the following command:
+```sh
+mvn clean test
+```
+The code coverage report will be generated in the target/site/jacoco directory.
 
-
-Tests unitaires exécutés
-> mvn test
-
-Tests d'intégration exécutés
-> mvn verify
-
-GL
+- Dependencies
+- Spring Boot
+- Spring Data JPA
+- H2 Database (for testing)
+- JUnit 5
+- Mockito
+- JaCoCo
