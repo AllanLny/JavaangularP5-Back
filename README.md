@@ -21,32 +21,28 @@ To install and run the project locally, follow these steps:
     cd YogaApp
     ```
 
-2. **Navigate to the backend directory:**
-    ```sh
-    cd back
-    ```
 
-3. **Build the project using Maven:**
+2. **Build the project using Maven:**
     ```sh
     mvn clean install
     ```
 
-4. **Run the Spring Boot application:**
+3. **Run the Spring Boot application:**
     ```sh
     mvn spring-boot:run
     ```
 
-5. **Navigate to the frontend directory:**
+4. **Navigate to the frontend directory:**
     ```sh
     cd ../front
     ```
 
-6. **Install the frontend dependencies:**
+5. **Install the frontend dependencies:**
     ```sh
     npm install
     ```
 
-7. **Run the frontend application:**
+6. **Run the frontend application:**
     ```sh
     npm start
     ```
