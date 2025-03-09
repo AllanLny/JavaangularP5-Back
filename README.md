@@ -32,21 +32,6 @@ To install and run the project locally, follow these steps:
     mvn spring-boot:run
     ```
 
-4. **Navigate to the frontend directory:**
-    ```sh
-    cd ../front
-    ```
-
-5. **Install the frontend dependencies:**
-    ```sh
-    npm install
-    ```
-
-6. **Run the frontend application:**
-    ```sh
-    npm start
-    ```
-
 ## Running Tests
 
 ### Unit Tests
